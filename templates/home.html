@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="data:,">
+        <!-- <link rel="shortcut icon" href="#" /> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> daibetes prediction </title>
+        <style>
+            input[type=number], select {
+            width: 20%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(78, 77, 77);
+            border-radius: 4px;
+            box-sizing: border-box;
+            }
+            body, html {
+              height: 80%;
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            .bg-image {
+              /* The image used */
+              background-image: url("https://images.pexels.com/photos/6942015/pexels-photo-6942015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+              
+              /* Add the blur effect */
+              filter: (8px);
+              -webkit-filter: (8px);
+              
+              /* Full height */
+              height: 150%; 
+              
+              /* Center and scale the image nicely */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            
+            /* Position text in the middle of the page/image */
+            .bg-text {
+              background-color: rgb(0,0,0); /* Fallback color */
+              background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+              color: rgb(245, 245, 245);
+              font-weight: bold;
+              border: 3px solid #f1f1f1;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 2;
+              width: 80%;
+              padding: 20px;
+              text-align: center;
+            }
+            </style>
+    </head>
+
+    <body TEXT = "BLACK";>
+        <div class="bg-image"></div>
+        <div class="bg-text">
+        <h1> DIABETES PREDICTION </h1>
+        <form method="POST" action="/diabetes">
+            
+
+           
+
+            <label>GLUCOSE ( mg/dL): </label>
+            <input style="font-size:15px" type = "number" name = "Glucose" step="any" min="0" placeholder=" enter number between 54 to 500" size="30"  required>
+           
+            <br>
+
+            <br>
+
+            <label>BLOOD PRESSURE(mm Hg) : </label>
+            <input style="font-size:15px" type = "number" name = "BloodPressure" step="any" min="0" placeholder="Enter number between 60 to 200" size="50" required>
+            
+            <br>
+
+            
+            <br>
+
+            <label>SKIN THICKNESS(0 to 5)mm:  </label>
+            <input style="font-size:15px" type = "number" name = "SkinThickness" step="any" min="0" placeholder="Enter skin thickness" size="50" required>
+            
+            <br>
+
+
+
+            <label>INSULIN : </label>
+            <input style="font-size:15px" type = "number" name = "Insulin" step="any" min="0" placeholder="Enter insulin" size="50" required>
+            
+            <br>
+
+
+
+            <label>BMI (Body Mass Index) : </label>
+            <input style="font-size:15px" type = "number" name = "BMI" step="any" min="0" placeholder="Enter Body Mass Index " size="50" required>
+            
+            <br>
+
+
+
+            <label>DIABETES PEDIGREE FUNCTION( 0 to 1) : </label>
+            <input style="font-size:15px" type = "number" name = "DiabetesPedigreeFunction" step="any" min="0" placeholder="Enter DiabetesPedigreeFunction 0.01 to 0.99" size="50" required>
+            
+            <br>
+
+
+
+            <label>AGE : </label>
+            <input style="font-size:15px" type = "number" name = "Age" placeholder="Enter Age" size="30" required>
+            
+           
+
+
+            <!-- Submit -->
+            <style>
+                .button {
+                    display: inline-block;
+                    border-radius: 4px;
+                    background-color: #278ed2;
+                    border: none;
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-size: 28px;
+                    padding: 20px;
+                    width: 250px;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    margin: 5px;
+                    }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+                }
+
+                .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+                }
+
+                .button:hover span {
+                padding-right: 25px;
+                }
+
+                .button:hover span:after {
+                opacity: 1;
+                right: 0;
+                }
+            </style>
+            <br>
+            <button style="font-size:20px;vertical-align:middle;font-family:verdana" type="submit" value="Submit" class="button"><span> RESULT </span></button>
+            <br>
+            <div style="font-size:20px;font-family:verdana" id="box">{{prediction}}<h6>Thank You for Visiting &#128522;<h6></h6><p><h6>© Lekheshwari .</h6></p> </div>&nbsp;
+            
+            
+            
+            <!-- <input type = "submit" value="SUBMIT">
+
+            <br> -->
+
+            <!-- <p> <b> {{ prediction }}  </b></p> -->
+
+
+        </form>
+
+
+    </body>
+</html>
